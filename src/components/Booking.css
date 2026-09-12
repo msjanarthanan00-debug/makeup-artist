@@ -1,0 +1,46 @@
+.booking-context {
+  max-width: 60ch;
+}
+
+.booking-context a {
+  color: var(--berry);
+  border-bottom: 1px solid var(--berry);
+  text-decoration: none;
+}
+
+.booking-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.booking-chip {
+  text-decoration: none;
+  font-size: 0.88rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--cream-line);
+  color: var(--ink-soft);
+}
+
+.booking-chip:hover {
+  border-color: var(--berry);
+  color: var(--ink);
+}
+
+.booking-chip.is-active {
+  background: var(--berry);
+  border-color: var(--berry);
+  color: var(--white);
+}
+
+.booking-widget {
+  background: var(--white);
+  border: 1px solid var(--cream-line);
+}
+
+.booking-fineprint {
+  margin-top: 1.5rem;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}

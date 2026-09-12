@@ -1,0 +1,30 @@
+.portfolio-page h1 {
+  margin-bottom: 2rem;
+}
+
+.portfolio-filters {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.portfolio-filter {
+  background: transparent;
+  border: 1px solid var(--cream-line);
+  color: var(--ink-soft);
+  padding: 0.5rem 1.1rem;
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+
+.portfolio-filter:hover {
+  border-color: var(--berry);
+  color: var(--ink);
+}
+
+.portfolio-filter.is-active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}

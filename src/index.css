@@ -1,0 +1,177 @@
+/* =========================================================
+   DESIGN TOKENS
+   Palette drawn from pigment + vellum: deep berry ink,
+   warm paper, a muted bronze accent (like a compact case).
+   Type: Fraunces (editorial serif, does the "talking") +
+   Work Sans (quiet, humanist, does the reading).
+   ========================================================= */
+
+:root {
+  /* Color */
+  --ink: #241318;          /* near-black, warmed with plum */
+  --berry: #7a2438;        /* primary accent — lipstick/wine */
+  --berry-deep: #591a29;   /* pressed state / dark accent */
+  --bronze: #a9835a;       /* secondary accent — compact-gold */
+  --paper: #f2e9de;        /* warm vellum background */
+  --paper-raised: #e9dbca; /* slightly deeper paper, for panels */
+  --cream-line: #d8c7ae;   /* hairline dividers on paper */
+  --ink-soft: #5c4a4f;     /* secondary text on paper */
+  --white: #fffaf4;
+
+  /* Type */
+  --font-display: "Fraunces", "Iowan Old Style", serif;
+  --font-body: "Work Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Layout */
+  --max-width: 1180px;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --radius: 2px; /* deliberately near-square — this brand doesn't do rounded cards */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 450;
+  line-height: 1.08;
+  margin: 0 0 0.5em;
+  color: var(--ink);
+}
+
+h1 { font-size: clamp(2.6rem, 6vw, 4.6rem); font-weight: 450; }
+h2 { font-size: clamp(1.9rem, 3.6vw, 2.8rem); }
+h3 { font-size: clamp(1.3rem, 2.2vw, 1.6rem); font-weight: 600; }
+
+p {
+  margin: 0 0 1em;
+  max-width: 62ch;
+  color: var(--ink-soft);
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: var(--font-body);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.section {
+  padding: clamp(3.5rem, 8vw, 7rem) 0;
+}
+
+.section-raised {
+  background: var(--paper-raised);
+}
+
+.section-label {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--berry);
+  margin-bottom: 0.75rem;
+}
+
+.hairline {
+  border: none;
+  border-top: 1px solid var(--cream-line);
+  margin: 0;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 160ms ease, color 160ms ease, border-color 160ms ease;
+}
+
+.btn-primary {
+  background: var(--berry);
+  color: var(--white);
+}
+.btn-primary:hover {
+  background: var(--berry-deep);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--ink);
+}
+.btn-ghost:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.btn:focus-visible,
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--berry);
+  outline-offset: 3px;
+}
+
+/* Utility */
+.eyebrow-plain {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.01em;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
